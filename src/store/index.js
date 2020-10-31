@@ -7,8 +7,6 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    usuarios: [],
-    usuario: {nombre:'', email: '', id: ''},
     toys: [],
     toy: {code:'', name:'', price:'', stock:''}
   },
@@ -68,7 +66,7 @@ export default new Vuex.Store({
       })
       .then(doc => {
         console.log(doc.id)
-        router.push('/')
+        router.push('/inicio')
        
       })
     },

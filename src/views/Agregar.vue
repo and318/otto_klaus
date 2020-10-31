@@ -6,10 +6,11 @@
         <input type="text" v-model="toy.code">
         <label>Nombre</label>
         <input type="text" v-model="toy.name">
+         <label>Stock</label>
+        <input type="text" v-model="toy.stock">
         <label>Precio</label>
         <input type="text" v-model="toy.price">
-        <label>Stock</label>
-        <input type="text" v-model="toy.stock">
+       
 
         <button type="submit">Agregar</button>
     </form>

@@ -5,8 +5,8 @@
 <form @submit.prevent="editarToy(toy)">
     <input type="text" v-model="toy.code">
     <input type="text" v-model="toy.name">
-    <input type="text" v-model="toy.price">
-    <input type="text" v-model="toy.stock">
+    <input type="number" v-model="toy.price">
+    <input type="number" v-model="toy.stock">
     <button type="submit">Guardar</button>
 </form>
 </div>
