@@ -53,7 +53,8 @@ export default new Vuex.Store({
       })
       .then(() =>{
         console.log('toy editado')
-        router.push('/')
+        alert("Prodcuto guardado")
+        router.push('/inicio')
       })
     },
     agregarToy({commit}, nuevoToy){
@@ -66,6 +67,7 @@ export default new Vuex.Store({
       })
       .then(doc => {
         console.log(doc.id)
+        alert("Producto Agregado")
         router.push('/inicio')
        
       })
@@ -73,7 +75,7 @@ export default new Vuex.Store({
     eliminarToy({commit, dispatch}, idToy){
       db.collection('toys').doc(idToy).delete()
       .then( () => {
-        console.log('toy eliminado')
+        alert('toy eliminado')
         dispatch('getToys')
       })
     }

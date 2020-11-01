@@ -1,12 +1,21 @@
 <template>
+<!-- <div>
+<h1>Editar</h1>
+    {{toy.code}} - {{toy.name}} - {{toy.price}} - {{toy.stock}} 
+<form @submit.prevent="editarToy(toy)">
+    <input type="text" v-model="toy.code">
+    <input type="text" v-model="toy.name">
+    <input type="number" v-model="toy.price">
+    <input type="number" v-model="toy.stock">
+    <button type="submit">Guardar</button>
+</form>
+</div> -->
 <b-container>
     <b-row>
         <b-col>
-            <h1>Agregar</h1>
+            <h1>Editar</h1>
             <b-form class="form-signin">
-                <b-form-group label="Código">
-                    <b-form-input v-model="toy.code"></b-form-input>
-                </b-form-group>
+               
                 <b-form-group label="Nombre">
                     <b-form-input v-model="toy.name"></b-form-input>
                 </b-form-group>
@@ -23,7 +32,7 @@
                     <b-row>
                         <b-col>
                             <p class="text-center">
-                            Estás agregando un nuevo juguete <br>
+                            Estás editando los datos<br>
                             ¿Estás seguro?
                             </p>
                         </b-col>
@@ -35,7 +44,7 @@
                         <b-button variant="danger" size="sm" @click="show=false">
                            Cancelar
                         </b-button>
-                        <b-button @click.prevent="agregarToy(toy)" variant="success" size="sm" class="float-right">Agregar</b-button>
+                        <b-button @click.prevent="editarToy(toy)" variant="success" size="sm" class="float-right">Guardar</b-button>
                     </div>
                 </template>
             </b-modal>
@@ -45,20 +54,23 @@
 </template>
 
 <script>
-import {
-    mapActions
-} from 'vuex'
+import {mapActions, mapState} from 'vuex'
 export default {
-    name: 'Agregar',
+    name: 'Editar',
     data() {
         return {
-            toy: [],
+            id: this.$route.params.id,
             show: false,
-
         }
     },
+    created() {
+        this.getToy(this.id)
+    },
     methods: {
-        ...mapActions(['agregarToy']),
+        ...mapActions(['getToy', 'editarToy'])
+    },
+    computed: {
+      ...mapState (['toy'])  
     },
 }
 </script>

@@ -19,14 +19,21 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Inicio.vue')
   },
   {
-    path: '/editar/:id',
+    path: '/editar/',
     name: 'Editar',
     meta: {
       autenticado:true,
     },
     component: () => import(/* webpackChunkName: "about" */ '../views/Editar.vue')
-  }
-  ,
+  },
+  {
+    path: '/editar/:id',
+    name: 'EditarToy',
+    meta: {
+      autenticado:true,
+    },
+    component: () => import(/* webpackChunkName: "about" */ '../views/EditarToy.vue')
+  },
   {
     path: '/agregar',
     name: 'Agregar',

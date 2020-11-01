@@ -11,28 +11,26 @@
                 <router-link to="/inicio" class="nav-link">Inicio</router-link>
             </li>
             <li class="nav-item">
-                <router-link to="/About" class="nav-link">About</router-link>
+                <button @click="logOut" class="btn btn-outline-success my-2 my-sm-0" v-if="!user">Salir</button>
             </li>
-            <li class="nav-item">
-                <button @click="logOut" class="btn btn-outline-success my-2 my-sm-0">Salir</button>
-            </li>
-           
+
         </ul>
     </div>
 </nav>
 </template>
+
 <script>
 import firebase from "firebase/app";
 import 'firebase/app';
 import 'firebase/auth';
 export default {
-  name: 'Navegacion',
-      methods: {
-      logOut() {
-        firebase.auth().signOut().then( () => {
-              this.$router.replace('/')
+    name: 'Navegacion',
+    methods: {
+        logOut() {
+            firebase.auth().signOut().then(() => {
+                this.$router.replace('/')
             })
-      }
+        }
     },
 
 }

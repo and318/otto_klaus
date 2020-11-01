@@ -2,8 +2,11 @@
 <div class="container">
     <div class="row mb-4 mt-3 ">
         <div class="col">
-            <router-link to='/agregar'>
+            <router-link to='/agregar' class="float-right">
                 <button class="btn btn-primary">Agregar</button>
+            </router-link>
+            <router-link to='/editar' class="float-right">
+                <button class="btn btn-warning">Editar</button>
             </router-link>
         </div>
     </div>
@@ -17,7 +20,7 @@
                         <th>Nombre</th>
                         <th>Stock</th>
                         <th>Precio</th>
-                        <th>Acción</th>
+                       
                     </tr>
                 </thead>
                 <tbody>
@@ -26,15 +29,7 @@
                         <td>{{item.name}}</td>
                         <td>{{item.stock}}</td>
                         <td>${{item.price}}</td>
-                        <td>
-                            <div class="btn-group" role="group" aria-label="Actions">
-<router-link :to="{name: 'Editar', params:{id: item.id}}">
-                                <button class="btn btn-success">Editar</button>
-                            </router-link>
-                            <button class="btn btn-danger" @click="eliminarToy(item.id)">Eliminar</button>
-                            </div>
-                           
-                        </td>
+                       
                     </tr>
                 </tbody>
             </table>
