@@ -4,16 +4,6 @@
 
     <h1 class="h3 mb-3 font-weight-normal">Login</h1>
     
-    <small>
-        use las siguientes credenciales:
-    </small>
-    <div>
-        <p>
-            user@test.com <br>
-            123456
-        </p>
-    </div>
-    
         <input type="text" placeholder="Usuario" v-model="user" class="form-control"> 
        
         <input type="password" v-model="pass" placeholder="Password" class="form-control"> 
