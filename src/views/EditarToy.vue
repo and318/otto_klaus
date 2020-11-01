@@ -13,6 +13,14 @@
 <b-container>
     <b-row>
         <b-col>
+<router-link to='/editar' class="float-right">
+                <button class="btn btn-primary">< Volver</button>
+            </router-link>
+
+        </b-col>
+    </b-row>
+    <b-row>
+        <b-col>
             <h1>Editar</h1>
             <b-form class="form-signin">
                
